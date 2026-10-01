@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="240" viewBox="0 0 160 240" role="img" aria-label="Espacio reservado para la portada">
+  <rect width="160" height="240" fill="#eef0f2"/>
+  <path d="M0 0 160 240M160 0 0 240" stroke="#c5cbd1" stroke-width="2"/>
+  <rect x="6" y="102" width="148" height="36" fill="#eef0f2"/>
+  <text x="80" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#65707b">PORTADA</text>
+</svg>

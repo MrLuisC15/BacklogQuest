@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Añadir juego | BacklogQuest</title>
+  <link rel="stylesheet" href="assets/layout.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header>
+    <a href="index.html">BacklogQuest</a>
+    <nav>
+      <a href="index.html">Mi biblioteca</a>
+      <a href="estadisticas.html">Estadísticas</a>
+      <a href="anadir-juego.html" aria-current="page">+ Añadir juego</a>
+    </nav>
+    <details>
+      <summary>Mi cuenta</summary>
+      <button disabled>Cerrar sesión</button>
+    </details>
+  </header>
+
+  <main id="contenido" class="ventana">
+    <div class="fila">
+      <h1>Añadir juego</h1>
+      <a href="index.html">Cerrar</a>
+    </div>
+    <label>Buscar juego
+      <input type="search" placeholder="Nombre del juego…" readonly>
+    </label>
+    <button disabled>Buscar</button>
+
+    <h2>Resultados de ejemplo</h2>
+    <ul class="resultados">
+      <li>
+        <img src="assets/portada-miniatura.svg" alt="" width="40" height="60">
+        <span><strong>Elden Ring</strong> (2022)</span>
+        <button disabled>Seleccionado</button>
+      </li>
+      <li>
+        <img src="assets/portada-miniatura.svg" alt="" width="40" height="60">
+        <span><strong>Hollow Knight</strong> (2017)</span>
+        <button disabled>Seleccionar</button>
+      </li>
+      <li>
+        <img src="assets/portada-miniatura.svg" alt="" width="40" height="60">
+        <span><strong>Hades</strong> (2020)</span>
+        <button disabled>Seleccionar</button>
+      </li>
+    </ul>
+
+    <h2>Añadir a mi biblioteca</h2>
+    <p><strong>Elden Ring</strong> (2022)</p>
+    <div class="columnas">
+      <label>Plataforma
+        <select>
+          <option>PC</option>
+          <option>Switch</option>
+          <option>PS5</option>
+          <option>Xbox Series X|S</option>
+        </select>
+      </label>
+      <label>Modo de cálculo
+        <select>
+          <option>Horas jugadas</option>
+          <option>Manual / capítulos</option>
+        </select>
+      </label>
+    </div>
+    <p class="acciones">
+      <a href="index.html">Cancelar</a>
+      <button disabled>Guardar en mi biblioteca</button>
+    </p>
+  </main>
+
+  <footer>BacklogQuest · Boceto inicial · Datos de ejemplo</footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hollow Knight · Partida | BacklogQuest</title>
+  <link rel="stylesheet" href="assets/layout.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header>
+    <a href="index.html">BacklogQuest</a>
+    <nav>
+      <a href="index.html">Mi biblioteca</a>
+      <a href="estadisticas.html">Estadísticas</a>
+      <a href="anadir-juego.html">+ Añadir juego</a>
+    </nav>
+    <details>
+      <summary>Mi cuenta</summary>
+      <button disabled>Cerrar sesión</button>
+    </details>
+  </header>
+
+  <main id="contenido">
+    <div class="columnas">
+      <img src="assets/portada-placeholder.svg" alt="Portada de muestra" width="640" height="360">
+      <div>
+        <h1>Hollow Knight</h1>
+        <p>Plataforma: PC</p>
+        <p>Lanzamiento: 2017</p>
+        <p>Horas estimadas: 30 h (ejemplo)</p>
+      </div>
+    </div>
+
+    <div class="columnas">
+      <section>
+        <h2>Progreso</h2>
+        <label>Modo de cálculo
+          <select>
+            <option>Horas jugadas</option>
+            <option>Manual / capítulos</option>
+          </select>
+        </label>
+        <label>Horas jugadas (de 30 h)
+          <input type="number" value="9" readonly>
+        </label>
+        <label>Progreso: 30 %
+          <progress max="100" value="30">30 %</progress>
+        </label>
+        <label>Estado de la partida
+          <select>
+            <option>Jugando</option>
+            <option>Pendiente</option>
+            <option selected>Pausado</option>
+            <option>Completado</option>
+          </select>
+        </label>
+        <details>
+          <summary>Ver campos manuales / capítulos</summary>
+          <label>Porcentaje manual
+            <input type="number" value="30" readonly>
+          </label>
+          <div class="columnas">
+            <label>Capítulo actual
+              <input type="number" placeholder="Ej. 3" readonly>
+            </label>
+            <label>Total de capítulos
+              <input type="number" placeholder="Ej. 10" readonly>
+            </label>
+          </div>
+        </details>
+      </section>
+      <section>
+        <h2>Checkpoint</h2>
+        <label>Diario de notas
+          <textarea rows="8" placeholder="Todavía no hay notas de partida." readonly>Explorando Cruces Olvidados. Volver a la tienda.</textarea>
+        </label>
+        <small>Dónde te has quedado, misiones pendientes e ítems a conseguir.</small>
+      </section>
+    </div>
+    <p class="acciones">
+      <a href="index.html">Volver a mi biblioteca</a>
+      <button disabled>Guardar cambios</button>
+    </p>
+  </main>
+
+  <footer>BacklogQuest · Boceto inicial · Datos de ejemplo</footer>
+</body>
+</html>

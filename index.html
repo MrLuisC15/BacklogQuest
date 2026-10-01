@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Backlog | BacklogQuest</title>
+  <link rel="stylesheet" href="assets/layout.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header>
+    <a href="index.html">BacklogQuest</a>
+    <nav>
+      <a href="index.html" aria-current="page">Mi biblioteca</a>
+      <a href="estadisticas.html">Estadísticas</a>
+      <a href="anadir-juego.html">+ Añadir juego</a>
+    </nav>
+    <details>
+      <summary>Mi cuenta</summary>
+      <button disabled>Cerrar sesión</button>
+    </details>
+  </header>
+
+  <main id="contenido">
+    <h1>Mi Backlog <small>(6 juegos)</small></h1>
+    <p class="fila">
+      <button disabled>Todos</button>
+      <button disabled>Jugando</button>
+      <button disabled>Pendientes</button>
+      <button disabled>Pausados</button>
+      <button disabled>Completados</button>
+    </p>
+    <div class="columnas">
+      <label>Plataforma
+        <select>
+          <option>Todas las plataformas</option>
+          <option>PC</option>
+          <option>PS5</option>
+          <option>Switch</option>
+        </select>
+      </label>
+      <label>Buscar en mi biblioteca
+        <input type="search" placeholder="Nombre del juego…" readonly>
+      </label>
+    </div>
+
+    <div class="rejilla">
+      <article>
+        <img src="assets/portada-placeholder.svg" alt="Portada de muestra" width="640" height="360">
+        <h2><a href="partida.html">Elden Ring</a></h2>
+        <p>PC · Jugando</p>
+        <label>Progreso: 45 %
+          <progress max="100" value="45">45 %</progress>
+        </label>
+        <p><strong>Última nota:</strong> En la puerta del jefe de fuego.</p>
+        <a href="partida.html">Actualizar partida</a>
+      </article>
+      <article>
+        <img src="assets/portada-placeholder.svg" alt="Portada de muestra" width="640" height="360">
+        <h2><a href="partida-zelda.html">Zelda: Tears of the Kingdom</a></h2>
+        <p>Switch · Jugando</p>
+        <label>Progreso: 32 %
+          <progress max="100" value="32">32 %</progress>
+        </label>
+        <p><strong>Última nota:</strong> Explorando la región de Akkala. Buscar el siguiente santuario.</p>
+        <a href="partida-zelda.html">Actualizar partida</a>
+      </article>
+      <article>
+        <img src="assets/portada-placeholder.svg" alt="Portada de muestra" width="640" height="360">
+        <h2><a href="partida-hollow-knight.html">Hollow Knight</a></h2>
+        <p>PC · Pausado</p>
+        <label>Progreso: 30 %
+          <progress max="100" value="30">30 %</progress>
+        </label>
+        <p><strong>Última nota:</strong> Explorando Cruces Olvidados. Volver a la tienda.</p>
+        <a href="partida-hollow-knight.html">Actualizar partida</a>
+      </article>
+      <article>
+        <img src="assets/portada-placeholder.svg" alt="Portada de muestra" width="640" height="360">
+        <h2><a href="partida-hades.html">Hades</a></h2>
+        <p>Switch · Completado</p>
+        <label>Progreso: 100 %
+          <progress max="100" value="100">100 %</progress>
+        </label>
+        <p><strong>Última nota:</strong> Objetivo de la partida completado.</p>
+        <a href="partida-hades.html">Actualizar partida</a>
+      </article>
+      <article>
+        <img src="assets/portada-placeholder.svg" alt="Portada de muestra" width="640" height="360">
+        <h2><a href="partida-god-of-war.html">God of War Ragnarök</a></h2>
+        <p>PS5 · Pendiente</p>
+        <label>Progreso: 0 %
+          <progress max="100" value="0">0 %</progress>
+        </label>
+        <p><strong>Última nota:</strong> Todavía no hay notas de partida.</p>
+        <a href="partida-god-of-war.html">Actualizar partida</a>
+      </article>
+      <article>
+        <img src="assets/portada-placeholder.svg" alt="Portada de muestra" width="640" height="360">
+        <h2><a href="partida-celeste.html">Celeste</a></h2>
+        <p>PC · Pendiente</p>
+        <label>Progreso: 0 %
+          <progress max="100" value="0">0 %</progress>
+        </label>
+        <p><strong>Última nota:</strong> Todavía no hay notas de partida.</p>
+        <a href="partida-celeste.html">Actualizar partida</a>
+      </article>
+    </div>
+  </main>
+
+  <footer>BacklogQuest · Boceto inicial · Datos de ejemplo</footer>
+</body>
+</html>

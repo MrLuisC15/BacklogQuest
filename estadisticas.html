@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estadísticas | BacklogQuest</title>
+  <link rel="stylesheet" href="assets/layout.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header>
+    <a href="index.html">BacklogQuest</a>
+    <nav>
+      <a href="index.html">Mi biblioteca</a>
+      <a href="estadisticas.html" aria-current="page">Estadísticas</a>
+      <a href="anadir-juego.html">+ Añadir juego</a>
+    </nav>
+    <details>
+      <summary>Mi cuenta</summary>
+      <button disabled>Cerrar sesión</button>
+    </details>
+  </header>
+
+  <main id="contenido">
+    <h1>Estadísticas</h1>
+    <div class="rejilla">
+      <p>Total de juegos en lista<strong>6</strong></p>
+      <p>Horas totales jugadas<strong>76 h</strong></p>
+      <p>Juegos completados al 100 %<strong>1</strong></p>
+    </div>
+    <div class="columnas">
+      <section>
+        <h2>Distribución por plataforma</h2>
+        <div class="fila">
+          <img src="assets/plataformas.svg" alt="PC: 3 juegos; Switch: 2; PS5: 1." width="220" height="220">
+          <ul>
+            <li>PC: 3 juegos</li>
+            <li>Switch: 2 juegos</li>
+            <li>PS5: 1 juego</li>
+          </ul>
+        </div>
+        <p>6 juegos en total · Una plataforma por partida</p>
+      </section>
+      <section>
+        <h2>Juegos por estado</h2>
+        <label>Jugando: 2
+          <meter max="6" value="2">2 de 6</meter>
+        </label>
+        <label>Completados: 1
+          <meter max="6" value="1">1 de 6</meter>
+        </label>
+        <label>Pendientes: 2
+          <meter max="6" value="2">2 de 6</meter>
+        </label>
+        <label>Pausados: 1
+          <meter max="6" value="1">1 de 6</meter>
+        </label>
+        <p>Número de juegos · Valores de ejemplo</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>BacklogQuest · Boceto inicial · Datos de ejemplo</footer>
+</body>
+</html>
