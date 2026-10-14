@@ -1,3 +1,8 @@
+<?php
+session_start();
+$usuarioAutenticado = isset($_SESSION['usuario_id']);
+$nombreUsuario = $_SESSION['usuario_nombre'] ?? 'Mi cuenta';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,41 +14,59 @@
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
 
-  <!-- Enlace de accesibilidad para saltar al contenido -->
   <a class="visually-hidden-focusable btn btn-primary position-absolute top-0 start-0 m-2 z-3" href="#contenido">Saltar al contenido</a>
 
-  <!-- Header / Navbar Compartido -->
+  <!-- Header / Navbar Dinámico -->
   <div class="container my-3">
     <header class="navbar navbar-expand-lg navbar-light bg-white rounded-4 shadow-sm border px-3 py-2">
       <div class="container-fluid">
-        <!-- Marca / Logo -->
-        <a class="navbar-brand fw-bold text-primary" href="index.html">🎮 BacklogQuest</a>
+        <a class="navbar-brand fw-bold text-primary" href="index.php">🎮 BacklogQuest</a>
 
-        <!-- Botón hamburguesa -->
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Enlaces -->
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="index.html">Mi biblioteca</a>
+              <a class="nav-link fw-semibold" href="index.php">Mi biblioteca</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active fw-bold" aria-current="page" href="estadisticas.html">Estadísticas</a>
+              <a class="nav-link active fw-bold" aria-current="page" href="estadisticas.php">Estadísticas</a>
             </li>
+            
+            <?php if ($usuarioAutenticado): ?>
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary rounded-pill px-3 ms-lg-2" data-bs-toggle="modal" data-bs-target="#modalAnadirJuego">
+                + Añadir juego
+              </button>
+            </li>
+            <?php endif; ?>
           </ul>
 
-          <!-- Enlaces para usuario no autenticado -->
-          <div class="d-flex align-items-center gap-2">
-            <button type="button" class="btn btn-outline-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalLogin">
-              Iniciar sesión
-            </button>
-            <button type="button" class="btn btn-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalRegistro">
-              Registrarse
-            </button>
+          <!-- Bloque derecho dinámico -->
+          <div>
+            <?php if ($usuarioAutenticado): ?>
+              <div class="dropdown">
+                <button class="btn btn-outline-primary rounded-pill dropdown-toggle" type="button" id="dropdownMiCuenta" data-bs-toggle="dropdown" aria-expanded="false">
+                  👤 <?php echo htmlspecialchars($nombreUsuario); ?>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm rounded-3" aria-labelledby="dropdownMiCuenta">
+                  <li><a class="dropdown-item text-danger" href="#" id="btnCerrarSesion">Cerrar sesión</a></li>
+                </ul>
+              </div>
+            <?php else: ?>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-outline-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                  Iniciar sesión
+                </button>
+                <button type="button" class="btn btn-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalRegistro">
+                  Registrarse
+                </button>
+              </div>
+            <?php endif; ?>
           </div>
+
         </div>
       </div>
     </header>
