@@ -1,4 +1,4 @@
-<<?php
+<?php
 session_start();
 // Comprobamos si el usuario ha iniciado sesión
 $usuarioAutenticado = isset($_SESSION['usuario_id']);
