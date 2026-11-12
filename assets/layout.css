@@ -1,0 +1,260 @@
+/* Base: estilos compartidos por las etiquetas HTML. */
+* { box-sizing: border-box; }
+body {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font: 16px/1.5 Arial, sans-serif;
+  color: #333;
+  background: white;
+}
+h1 { 
+  margin: 0 0 20px; font-size: 28px; 
+}
+h2 { 
+  margin: 12px 0; font-size: 20px; 
+}
+p { 
+  margin: 0 0 12px; 
+}
+a { 
+  color: #245a92; 
+}
+small { 
+  font-size: 14px; 
+  font-weight: normal; 
+}
+img { 
+  display: block; 
+  max-width: 100%; 
+  height: auto; 
+}
+button, input, select, textarea { 
+  font: inherit; 
+  padding: 8px; 
+}
+button:disabled { 
+  color: #666; 
+}
+label { 
+  display: block; 
+  margin-bottom: 14px; 
+}
+input, select, textarea { 
+  display: block; width: 100%; margin-top: 4px; 
+}
+textarea { 
+  resize: none; 
+}
+progress, meter { 
+  display: block; width: 100%; height: 14px; 
+}
+summary { 
+  cursor: pointer; margin-bottom: 10px; 
+}
+
+/* Cabecera y pie */
+header, nav { 
+  display: flex; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+header { 
+  padding: 18px 0; 
+  border-bottom: 1px solid #ccc; 
+}
+header > a { 
+  font-size: 22px; 
+  font-weight: bold; 
+  color: inherit; 
+  text-decoration: none; 
+}
+nav { 
+  margin-left: auto; 
+}
+nav a[aria-current] { 
+  font-weight: bold; 
+}
+header summary { 
+  margin: 0; 
+}
+header details button { 
+  display: block; 
+  margin-top: 8px; 
+}
+main { 
+  padding: 24px 0; 
+}
+footer { 
+  padding: 18px 0; 
+  border-top: 1px solid #ccc; 
+  font-size: 14px; 
+}
+.salto { 
+  position: absolute; 
+  top: -60px; 
+  left: 16px; 
+  padding: 8px; 
+  background: white; 
+}
+.salto:focus { 
+  top: 8px; 
+}
+
+/* Distribuciones reutilizadas en todas las páginas. */
+.fila, .acciones { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.acciones { justify-content: flex-end; margin-top: 20px; }
+.columnas, .rejilla { display: grid; gap: 20px; margin-bottom: 20px; }
+.columnas { grid-template-columns: repeat(2, 1fr); }
+.rejilla { grid-template-columns: repeat(3, 1fr); }
+.columnas > *, .rejilla > * { min-width: 0; }
+article, section, .rejilla > p { padding: 16px; border: 1px solid #ccc; }
+article { display: flex; flex-direction: column; }
+article > a { margin-top: auto; }
+.rejilla img { width: 100%; height: 140px; object-fit: cover; }
+.rejilla > p strong { display: block; font-size: 28px; }
+
+/* Vista de añadir juego y su lista de resultados. */
+.ventana { max-width: 700px; margin: 24px auto; padding: 20px; border: 1px solid #ccc; }
+.ventana > .fila { justify-content: space-between; }
+.resultados { list-style: none; padding: 0; }
+.resultados li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+.resultados span { flex: 1; min-width: 120px; }
+
+/* Columnas adaptadas a tablet y móvil. */
+@media (max-width: 900px) {
+  nav { order: 3; width: 100%; margin: 0; }
+  header details { margin-left: auto; }
+  .rejilla { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .columnas { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .rejilla { grid-template-columns: 1fr; }
+  .acciones { justify-content: flex-start; }
+}
+
+
+/* ==========================================
+   ESTILOS PARA TARJETAS DE JUEGOS (CARÁTULAS IGDB)
+   ========================================== */
+
+/* Contenedor de la carátula vertical (Proporción Póster 3:4) */
+.tarjeta-caratula-contenedor {
+  width: 95px;
+  min-height: 130px;
+  background-color: var(--bs-secondary-bg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Imagen de la carátula */
+.tarjeta-caratula-img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* Título completo sin recorte, con salto de palabra adaptativo */
+.titulo-juego-card {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Transiciones e interacciones en las tarjetas */
+.tarjeta-juego {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-juego:hover {
+  transform: translateY(-2px);
+  border-color: var(--bs-primary-border-subtle) !important;
+}
+
+.tarjeta-juego:hover .tarjeta-caratula-contenedor {
+  transform: scale(1.03);
+}
+
+/* ==========================================
+   GESTIÓN Y CORRECCIONES EN MODO OSCURO (DARK MODE)
+   ========================================== */
+
+[data-bs-theme="dark"] .tarjeta-juego {
+  background-color: rgba(33, 37, 41, 0.75) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-bs-theme="dark"] .tarjeta-caratula-contenedor {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Forzar estilos oscuros en modales y alertas de SweetAlert2 cuando el tema es oscuro */
+[data-bs-theme="dark"] .swal2-popup {
+    background-color: rgba(33, 37, 41, 0.92) !important; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="light"] .swal2-popup {
+    background-color: rgba(255, 255, 255, 0.94) !important; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] .swal2-title,
+[data-bs-theme="dark"] .swal2-html-container {
+    color: var(--bs-body-color) !important;
+}
+
+/* Fondo base preventivo para evitar destellos al recargar */
+[data-bs-theme="dark"] body {
+  background-color: #212529 !important; /* Color de fondo oscuro estándar de Bootstrap */
+  color: #f8f9fa !important;
+}
+
+[data-bs-theme="light"] body {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+}
+
+/* CORRECCIÓN DE TEXTOS EN MODALES (MODO OSCURO) */
+[data-bs-theme="dark"] .modal-content {
+    background-color: rgba(33, 37, 41, 0.92) !important; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+[data-bs-theme="light"] .modal-content,
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.94) !important; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] .modal-header,
+[data-bs-theme="dark"] .modal-footer {
+    border-color: var(--bs-border-color-translucent) !important;
+}
+
+[data-bs-theme="dark"] .modal-title,
+[data-bs-theme="dark"] .form-label,
+[data-bs-theme="dark"] .form-check-label {
+    color: var(--bs-body-color) !important;
+}
+
+/* Responsive: ajuste de tamaño en dispositivos móviles pequeños */
+@media (max-width: 480px) {
+  .tarjeta-caratula-contenedor {
+    width: 80px;
+    min-height: 110px;
+  }
+}
